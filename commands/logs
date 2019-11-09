@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "${DXC_HOME}/shared/all.sh"
+source "${DXC_HOME}/core/logs.sh"
+
+#?? Show the logs of a container
+##?
+##?
+##? Usage:
+##?     logs
+##?
+##? Examples:
+##?     logs
+
+dx::logs

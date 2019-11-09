@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+## Environment variables
+
+DX_SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+export DX_SCRIPT_DIR
+
+DX_HOME="${DX_HOME:-${DX_SCRIPT_DIR}}"
+export DX_HOME
+
+DXC_HOME="${DX_HOME}/commands"
+export DXC_HOME
+
+## Helper functions
+
+function dx::print_help() {
+  cat <<EOF
+dx
+
+Here you can find commands to help you manage Docker resources faster
+---
+Usage:
+  dx ls        : List all resources managed by docker
+  dx exec      : Execute custom commands in a running container
+  dx logs      : Show the logs of a container
+  dx inspect   : Return low-level information on Docker objects
+
+  dx --help    : Show this message
+EOF
+}
+
+function dx::find_command() {
+  local -r filter="${1:-}"
+
+  if [ -z "${filter}" ]; then
+    echo "!!! The function \"${FUNCNAME[0]:-}\" needs an argument (i.e exec)." >&2
+    exit 1
+  fi
+
+  local possibilities
+  readarray possibilities < <(find "${DXC_HOME}" \
+    -maxdepth 1 \
+    -type f \
+    -iname "${filter}*" \
+    \( -perm -u=x -o -perm -g=x -o -perm -o=x \))
+
+  if [ "${#possibilities[@]}" -lt 1 ]; then
+    echo "No command found for \"${filter}\"." >&2
+    exit 1
+  fi
+
+  if [ "${#possibilities[@]}" -gt 1 ]; then
+    echo -e "Multiple commands found for \"${filter}\".\n" >&2
+    for possibility in ${possibilities[@]}; do
+      echo "|> $(basename "${possibility}")" >&2
+    done
+    exit 1
+  fi
+
+  echo "${possibilities[0]}"
+}
+
+function dx::check_arguments() {
+  local -r n_args="${#}"
+
+  if [ ${n_args} -lt 1 -o "${*}" == '--help' ]; then
+    dx::print_help
+    exit 0
+  fi
+
+  local -r dx_command="$(dx::find_command "${1}")"
+  if [ -z "${dx_command}" ]; then
+    echo
+    dx::print_help
+    exit 1
+  fi
+}
+
+function dx::main() {
+  dx::check_arguments "${@}"
+
+  local -r filter="${1:-}"
+  local -r dx_command="$(dx::find_command "${filter}")"
+
+  bash "${dx_command}" "${@:2}"
+}
+
+## Running
+
+dx::main "${@}"

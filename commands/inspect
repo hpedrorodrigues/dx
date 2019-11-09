@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "${DXC_HOME}/shared/all.sh"
+source "${DXC_HOME}/core/inspect.sh"
+
+#?? Return low-level information on Docker objects
+##?
+##?
+##? Usage:
+##?     inspect
+##?
+##? Examples:
+##?     inspect
+
+dx::inspect

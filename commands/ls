@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "${DXC_HOME}/shared/all.sh"
+source "${DXC_HOME}/core/ls.sh"
+
+#?? List all resources managed by docker
+##?
+##?
+##? Usage:
+##?     ls
+##?
+##? Examples:
+##?     ls
+
+dx::list
