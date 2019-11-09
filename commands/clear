@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "${DXC_HOME}/shared/all.sh"
+source "${DXC_HOME}/core/clear.sh"
+
+#?? Remove resources using a filter
+##?
+##?
+##? Usage:
+##?     clear <resource_filter>
+##?
+##? Examples:
+##?     clear containers
+##?     clear images
+##?     clear volumes
+##?     clear networks
+##?     clear all
+##?     clear dirt
+
+readonly resource_filter="${1:-}"
+
+dx::assert::non_empty "${resource_filter}" 'The clear command requires a resource type.'
+
+dx::log::info 'Do you really want to delete Docker resources with this filter? [y/n]'
+read -e -r confirmation
+
+if [ "${confirmation}" = 'y' -o "${confirmation}" = 'yes' ]; then
+  case "${resource_filter}" in
+    'all') dx::remove_all ;;
+    'dirt') dx::clean_up_dirt ;;
+    'containers') dx::remove_all_containers ;;
+    'images') dx::remove_images ;;
+    'volumes') dx::remove_volumes ;;
+    'networks') dx::remove_networks ;;
+    *) dx::log::errexit "Invalid resource filter (${resource_filter})" ;;
+  esac
+fi

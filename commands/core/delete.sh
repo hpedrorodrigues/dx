@@ -30,7 +30,7 @@ function dx::delete() {
     local -r resources="$(dx::list_resources)"
 
     if [ -z "${resources}" ]; then
-      sphynx::log::errexit 'No resources found'
+      dx::log::errexit 'No resources found'
     fi
 
     echo -e "${resources}" \
@@ -46,7 +46,7 @@ function dx::delete() {
     readarray -t resources < <(dx::list_resources)
 
     if [ "${#resources[@]}" -eq 0 ]; then
-      sphynx::log::errexit 'No resources found'
+      dx::log::errexit 'No resources found'
     fi
 
     select resource in "${resources[@]}"; do
