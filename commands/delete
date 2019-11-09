@@ -3,15 +3,15 @@
 set -euo pipefail
 
 source "${DXC_HOME}/shared/all.sh"
-source "${DXC_HOME}/core/ls.sh"
+source "${DXC_HOME}/core/delete.sh"
 
-#?? List all resources
+#?? Remove one or more resources
 ##?
 ##?
 ##? Usage:
-##?     ls
+##?     delete
 ##?
 ##? Examples:
-##?     ls
+##?     delete
 
-dx::list
+dx::delete

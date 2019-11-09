@@ -5,7 +5,7 @@ set -euo pipefail
 source "${DXC_HOME}/shared/all.sh"
 source "${DXC_HOME}/core/inspect.sh"
 
-#?? Return low-level information on Docker objects
+#?? Return low-level information on objects
 ##?
 ##?
 ##? Usage:

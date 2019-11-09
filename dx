@@ -22,10 +22,11 @@ dx
 Here you can find commands to help you manage Docker resources faster
 ---
 Usage:
-  dx ls        : List all resources managed by docker
+  dx ls        : List all resources
   dx exec      : Execute custom commands in a running container
   dx logs      : Show the logs of a container
-  dx inspect   : Return low-level information on Docker objects
+  dx inspect   : Return low-level information on objects
+  dx delete    : Remove one or more resources
 
   dx --help    : Show this message
 EOF

@@ -6,6 +6,22 @@ function dx::docker::check_requirements() {
   fi
 }
 
+function dx::list_resources() {
+  docker ps \
+    --all \
+    --format 'container {{.ID}} {{.Names}}'
+
+  docker images \
+    --format='image {{.ID}} {{.Repository}}:{{.Tag}}'
+
+  docker volume ls \
+    --format 'volume {{.Name}}'
+
+  docker network ls \
+    --filter 'type=custom' \
+    --format 'network {{.ID}} {{.Name}}'
+}
+
 function dx::docker::containers() {
   local -r template='table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'
 
