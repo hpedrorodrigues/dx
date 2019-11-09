@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+if [ "${UID}" -eq '0' ]; then
+  echo 'This script should not be run using sudo or as the root user' >&2
+  exit 1
+fi
+
+## Environment variables
+
+export DX_HOME="${DX_HOME:-${HOME}/.dx}"
+
+## Helper functions
+
+function dx::clone() {
+  if [ -d "${DX_HOME}" ]; then
+    echo -e 'Dx is already cloned!\n' >&2
+  else
+    local -r parent_directory="$(dirname "${DX_HOME}")"
+    if ! [ -d "${parent_directory}" ]; then
+      mkdir -p "${parent_directory}"
+    fi
+
+    git clone 'git@github.com:hpedrorodrigues/dx.git' "${DX_HOME}"
+  fi
+}
+
+function dx::install() {
+  local -r cmd="[ -d \"${DX_HOME}\" ] && export PATH=\"${DX_HOME}:\${PATH}\""
+
+  if [ "${SHELL}" = '/bin/zsh' ]; then
+    local -r zsh_file="${HOME}/.zshenv"
+    if grep "${cmd}" "${zsh_file}" --quiet; then
+      echo "Dx is already installed at \"${zsh_file}\"!" >&2
+    else
+      echo "Installing dx in your \"${zsh_file}\"."
+      echo "${cmd}" >>"${zsh_file}"
+    fi
+  fi
+
+  local -r bash_file="${HOME}/.bashrc"
+  if grep "${cmd}" "${bash_file}" --quiet; then
+    echo "Dx is already installed at \"${bash_file}\"!" >&2
+  else
+    echo "Installing dx in your \"${bash_file}\"."
+    echo "${cmd}" >>"${bash_file}"
+  fi
+}
+
+function dx::main() {
+  dx::clone
+  dx::install
+}
+
+## Running
+
+dx::main "${@}"
