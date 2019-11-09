@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
+# shellcheck source=commands/shared/all.sh
 source "${DXC_HOME}/shared/all.sh"
+# shellcheck source=commands/core/clear.sh
 source "${DXC_HOME}/core/clear.sh"
 
 #?? Remove resources using a filter
@@ -26,7 +28,7 @@ dx::assert::non_empty "${resource_filter}" 'The clear command requires a resourc
 dx::log::info 'Do you really want to delete Docker resources with this filter? Be careful. [y/n]'
 read -e -r confirmation
 
-if [ "${confirmation}" = 'y' -o "${confirmation}" = 'yes' ]; then
+if [ "${confirmation}" = 'y' ] || [ "${confirmation}" = 'yes' ]; then
   case "${resource_filter}" in
     'all') dx::remove_all ;;
     'dirt') dx::clean_up_dirt ;;

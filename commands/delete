@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
+# shellcheck source=commands/shared/all.sh
 source "${DXC_HOME}/shared/all.sh"
+# shellcheck source=commands/core/delete.sh
 source "${DXC_HOME}/core/delete.sh"
 
 #?? Remove one or more resources

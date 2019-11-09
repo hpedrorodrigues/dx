@@ -14,7 +14,7 @@ function dx::inspect() {
       | fzf --multi \
       | while read -r resource; do
         [ -n "${resource}" ] \
-          && dx::docker::inspect $(echo "${resource}" | awk '{ print $2 }')
+          && dx::docker::inspect "$(echo "${resource}" | awk '{ print $2 }')"
       done
   else
     export PS3=$'\n''Type the respective resource number: '$'\n'
@@ -27,7 +27,7 @@ function dx::inspect() {
     fi
 
     select resource in "${resources[@]}"; do
-      dx::docker::inspect $(echo "${resource}" | awk '{ print $2 }')
+      dx::docker::inspect "$(echo "${resource}" | awk '{ print $2 }')"
       break
     done
   fi

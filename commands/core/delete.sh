@@ -33,11 +33,19 @@ function dx::delete() {
       dx::log::errexit 'No resources found'
     fi
 
+    local type=''
+    local id=''
+
     echo -e "${resources}" \
       | fzf --multi \
       | while read -r resource; do
-        [ -n "${resource}" ] \
-          && dx::delete_resource $(echo "${resource}" | awk '{ print $1 " " $2 }')
+
+        if [ -n "${resource}" ]; then
+          type="$(echo "${resource}" | awk '{ print $1 }')"
+          id="$(echo "${resource}" | awk '{ print $2 }')"
+
+          dx::delete_resource "${type}" "${id}"
+        fi
       done
   else
     export PS3=$'\n''Type the respective resource number: '$'\n'
@@ -49,8 +57,14 @@ function dx::delete() {
       dx::log::errexit 'No resources found'
     fi
 
+    local type=''
+    local id=''
+
     select resource in "${resources[@]}"; do
-      dx::delete_resource $(echo "${resource}" | awk '{ print $1 " " $2 }')
+      type="$(echo "${resource}" | awk '{ print $1 }')"
+      id="$(echo "${resource}" | awk '{ print $2 }')"
+
+      dx::delete_resource "${type}" "${id}"
       break
     done
   fi

@@ -77,7 +77,7 @@ function dx::find_command() {
 
   if [ "${#possibilities[@]}" -gt 1 ]; then
     echo -e "Multiple commands found for \"${filter}\".\n" >&2
-    for possibility in ${possibilities[@]}; do
+    for possibility in "${possibilities[@]}"; do
       echo "|> $(basename "${possibility}")" >&2
     done
     exit 1
@@ -89,7 +89,7 @@ function dx::find_command() {
 function dx::check_arguments() {
   local -r n_args="${#}"
 
-  if [ ${n_args} -lt 1 -o "${*}" == '--help' ]; then
+  if [ ${n_args} -lt 1 ] || [ "${*}" == '--help' ]; then
     dx::print_help
     exit 0
   fi
