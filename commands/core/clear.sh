@@ -34,7 +34,7 @@ function dx::remove_networks() {
 function dx::remove_all() {
   dx::docker::check_requirements
 
-  dx::remove_containers
+  dx::remove_all_containers
 
   docker system prune --force --all --volumes
 }
