@@ -3,7 +3,10 @@
 
 # dx
 
-**dx** is a command line tool to help manage Docker resources faster.
+**dx** is a command line tool to help manage Docker resources faster with
+interactive commands.
+
+![Demo GIF][exec-gif]
 
 ## Installation
 
@@ -27,8 +30,8 @@ git clone git@github.com:hpedrorodrigues/dx.git ~/.dx
 echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
 ```
 
-> **Note**: For a better experience with the interactive mode it's recommended to
-> install the [command-line fuzzy finder][fzf] too.
+> **Note**: For a better experience with this command-line tool it's recommended
+> to install the [fuzzy finder][fzf] too.
 >
 > For this to work it must be available in your `PATH`.
 
@@ -40,3 +43,5 @@ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
 [shell-code-dx]: https://github.com/hpedrorodrigues/dx/search?l=shell
 
 [fzf]: https://github.com/junegunn/fzf
+
+[exec-gif]: images/exec.gif
