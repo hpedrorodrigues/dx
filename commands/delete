@@ -16,4 +16,9 @@ source "${DXC_HOME}/core/delete.sh"
 ##? Examples:
 ##?     delete
 
-dx::delete
+dx::log::info 'Do you really want to run this command? It can delete some Docker resources. Be careful. [y/n]'
+read -e -r confirmation
+
+if [ "${confirmation}" = 'y' ] || [ "${confirmation}" = 'yes' ]; then
+  dx::delete
+fi

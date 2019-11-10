@@ -25,7 +25,7 @@ readonly resource_filter="${1:-}"
 
 dx::assert::non_empty "${resource_filter}" 'The clear command requires a resource filter.'
 
-dx::log::info 'Do you really want to delete Docker resources with this filter? Be careful. [y/n]'
+dx::log::info 'Do you really want to delete the Docker resources with this filter? Be careful. [y/n]'
 read -e -r confirmation
 
 if [ "${confirmation}" = 'y' ] || [ "${confirmation}" = 'yes' ]; then
