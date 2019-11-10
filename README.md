@@ -27,9 +27,10 @@ git clone git@github.com:hpedrorodrigues/dx.git ~/.dx
 echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
 ```
 
-**Note**: For a better experience with the interactive mode it's recommended to
-install the [command-line fuzzy finder][fzf] too. For this to work it must
-available in your `PATH`.
+> **Note**: For a better experience with the interactive mode it's recommended to
+> install the [command-line fuzzy finder][fzf] too.
+>
+> For this to work it must be available in your `PATH`.
 
 
 [github-action-badge]: https://github.com/hpedrorodrigues/dx/workflows/DX%20Actions/badge.svg
