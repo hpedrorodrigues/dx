@@ -3,7 +3,7 @@
 
 # dx
 
-**dx** is a command line tool to help manage Docker resources faster with
+**dx** is a command line tool to help you manage Docker resources faster with
 interactive commands.
 
 ![Demo GIF][exec-gif]
