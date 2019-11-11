@@ -30,10 +30,10 @@ Usage:
   dx --help                     : Show this message
 ```
 
-- Interactive menu with fuzzy searching ([with fzf][fzf])
+- Interactive menu with fuzzy searching ([with fuzzy finder][fzf])
 ![Demo Interactive GIF][exec-interactive-gif]
 
-- Interactive menu ([with the conditional construct select][select])
+- Interactive menu ([with the construct select][select])
 ![Demo Non Interactive GIF][exec-gif]
 
 ## Installation
