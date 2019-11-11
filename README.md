@@ -10,17 +10,19 @@ interactive commands.
 
 ## Installation
 
+Clone this repository to any directory and add it to `PATH`.
+
 ```bash
-# Clone the project
-$ git clone git@github.com:hpedrorodrigues/dx.git ~/.dx
+git clone --depth 1 git@github.com:hpedrorodrigues/dx.git ~/.dx
 
-# Add the directory to PATH
 
-## Bash
-$ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
+# Bash
+echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
 
-## Zsh
-$ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshenv"
+## or
+
+# Zsh
+echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshenv"
 ```
 
 > **Note**: For a better experience with this project it's recommended
