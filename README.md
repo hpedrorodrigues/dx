@@ -58,6 +58,16 @@ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshenv"
 >
 > For this to work it must be available in your `PATH`.
 
+### Completion
+
+**dx** provides shell completion to complete supported commands while typing.
+
+If you want to add the Bash completion, add the following to your `.bashrc` or `.zshenv`.
+
+```bash
+[ -f "${HOME}/.dx/completion/dx.bash" ] && source "${HOME}/.dx/completion/dx.bash"
+```
+
 
 [github-action-badge]: https://github.com/hpedrorodrigues/dx/workflows/DX%20Actions/badge.svg
 [github-action-dx]: https://github.com/hpedrorodrigues/dx/actions
