@@ -10,24 +10,17 @@ interactive commands.
 
 ## Installation
 
-You can install **dx** in two ways:
-
-- Using the script [install](./install) (the recommended way):
-
 ```bash
-# cURL
-bash <(curl 'https://raw.githubusercontent.com/hpedrorodrigues/dx/master/install')
+# Clone the project
+$ git clone git@github.com:hpedrorodrigues/dx.git ~/.dx
 
-# Wget
-bash <(wget -qO- 'https://raw.githubusercontent.com/hpedrorodrigues/dx/master/install')
-```
+# Add the directory to PATH
 
-- Or you can install **dx** manually:
+## Bash
+$ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
 
-```bash
-git clone git@github.com:hpedrorodrigues/dx.git ~/.dx
-
-echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
+## Zsh
+$ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshenv"
 ```
 
 > **Note**: For a better experience with this project it's recommended
