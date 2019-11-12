@@ -1,4 +1,4 @@
-name: DX Actions
+name: DX Checks
 on:
   pull_request:
     branches:
