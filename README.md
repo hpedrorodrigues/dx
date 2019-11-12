@@ -43,14 +43,8 @@ Clone this repository to any directory and add it to `PATH`.
 ```bash
 git clone --depth 1 git@github.com:hpedrorodrigues/dx.git ~/.dx
 
-
-# Bash
-echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
-
-## or
-
-# Zsh
-echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshrc"
+## Add the directory to PATH in your "${HOME}/.bashrc" or "${HOME}/.zshrc"
+export PATH="${HOME}/.dx:${PATH}"
 ```
 
 > **Note**: To use the interactive menu with fuzzy searching you need to install
@@ -60,13 +54,29 @@ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshrc"
 
 ### Completion
 
-**dx** provides shell completion to complete supported commands while typing.
+**dx** provides shell completion to complete commands while typing.
 
-If you want to add the Bash completion, add the following to your `.bashrc` or `.zshrc`.
+#### Bash
+
+If you want to add the Bash completion, add the following to your `.bashrc`.
 
 ```bash
 [ -f "${HOME}/.dx/completion/dx.bash" ] && source "${HOME}/.dx/completion/dx.bash"
 ```
+
+#### Zsh
+
+If you want to add the Zsh completion, add the directory to your `$fpath`
+in `.zshrc`.
+
+```bash
+fpath=("${HOME}/.dx/completion" $fpath)
+```
+
+> **Note**: If it doesn't work, add `autoload -U compinit && compinit` to your
+> `.zshrc` after the `$fpath` been set.
+>
+> You may have to force rebuild the zcompdump with `rm -f ~/.zcompdump && compinit`.
 
 
 [github-action-badge]: https://github.com/hpedrorodrigues/dx/workflows/DX%20Actions/badge.svg
