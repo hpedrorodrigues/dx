@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# dx(1) is a command line tool to help manage Docker resources
+# dx(1) is a command-line tool to help manage Docker resources
 
 # Copyright 2019 Pedro Rodrigues
 #
