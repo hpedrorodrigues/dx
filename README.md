@@ -41,6 +41,19 @@ Usage:
 
 ## Installation
 
+### Using Homebrew or Linuxbrew
+
+You can use [Homebrew][homebrew] or [Linuxbrew][linuxbrew] to install **dx**.
+
+```bash
+brew tap hpedrorodrigues/dx https://github.com/hpedrorodrigues/dx.git
+brew install dx
+```
+
+> **Note**: It will also set up the completions (Bash and Zsh).
+
+### Using git
+
 Clone this repository to any directory and add it to `PATH`.
 
 ```bash
@@ -57,11 +70,11 @@ export DX_HOME="${HOME}/.dx" \
 >
 > For this to work it must be available in your `PATH`.
 
-### Completion
+#### Completion
 
 **dx** provides shell completion to complete commands while typing.
 
-#### Bash
+##### Bash
 
 If you want to add the Bash completion, add the following to your `.bashrc`.
 
@@ -69,7 +82,7 @@ If you want to add the Bash completion, add the following to your `.bashrc`.
 [ -f "${HOME}/.dx/completion/dx.bash" ] && source "${HOME}/.dx/completion/dx.bash"
 ```
 
-#### Zsh
+##### Zsh
 
 If you want to add the Zsh completion, add the directory to your `$fpath`
 in `.zshenv`.
@@ -95,3 +108,6 @@ fpath=("${HOME}/.dx/completion" $fpath)
 
 [exec-gif]: images/exec.gif
 [exec-interactive-gif]: images/exec-interactive.gif
+
+[homebrew]: https://brew.sh
+[linuxbrew]: http://linuxbrew.sh
