@@ -51,6 +51,9 @@ brew install dx
 ```
 
 > **Note**: It will also set up the completions (Bash and Zsh).
+>
+> If you want the interactive menu with fuzzy searching you need to install the
+> [fuzzy finder][fzf] too.
 
 ### Using git
 
