@@ -7,5 +7,4 @@ source "${DXC_HOME}/shared/all.sh"
 # shellcheck source=commands/core/ls.sh
 source "${DXC_HOME}/core/ls.sh"
 
-
 dx::list
