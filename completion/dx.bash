@@ -9,6 +9,7 @@ _dx() {
     local words=()
   fi
 
+  COMPREPLY=()
   while read -r line; do
     COMPREPLY+=("${line}")
   done < <(compgen -W "${words[*]}" -- "${prev_word}")
