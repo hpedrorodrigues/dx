@@ -43,8 +43,10 @@ Clone this repository to any directory and add it to `PATH`.
 ```bash
 git clone --depth 1 git@github.com:hpedrorodrigues/dx.git ~/.dx
 
-## Add the directory to PATH in your "${HOME}/.bashrc" or "${HOME}/.zshrc"
-export PATH="${HOME}/.dx:${PATH}"
+## Add the directory to PATH in your ~/.bashrc or ~/.zshenv
+export DX_HOME="${HOME}/.dx" \
+  && [ -d "${DX_HOME}" ] \
+  && export PATH="${DX_HOME}:${PATH}"
 ```
 
 > **Note**: To use the interactive menu with fuzzy searching you need to install
@@ -67,14 +69,14 @@ If you want to add the Bash completion, add the following to your `.bashrc`.
 #### Zsh
 
 If you want to add the Zsh completion, add the directory to your `$fpath`
-in `.zshrc`.
+in `.zshenv`.
 
 ```bash
 fpath=("${HOME}/.dx/completion" $fpath)
 ```
 
 > **Note**: If it doesn't work, add `autoload -U compinit && compinit` to your
-> `.zshrc` after the `$fpath` been set.
+> `.zshenv` after the `$fpath` been set.
 >
 > You may have to force rebuild the zcompdump with `rm -f ~/.zcompdump && compinit`.
 
