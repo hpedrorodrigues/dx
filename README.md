@@ -11,7 +11,7 @@ interactive commands.
 ```
 dx
 
-Here you can find commands to help you manage Docker resources faster
+Command-line tool to help you manage Docker resources faster
 ---
 Usage:
   dx ls                         : List all resources
