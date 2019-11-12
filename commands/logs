@@ -7,13 +7,5 @@ source "${DXC_HOME}/shared/all.sh"
 # shellcheck source=commands/core/logs.sh
 source "${DXC_HOME}/core/logs.sh"
 
-#?? Show the logs of a container
-##?
-##?
-##? Usage:
-##?     logs
-##?
-##? Examples:
-##?     logs
 
 dx::logs

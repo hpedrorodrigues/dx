@@ -7,14 +7,6 @@ source "${DXC_HOME}/shared/all.sh"
 # shellcheck source=commands/core/delete.sh
 source "${DXC_HOME}/core/delete.sh"
 
-#?? Remove one or more resources
-##?
-##?
-##? Usage:
-##?     delete
-##?
-##? Examples:
-##?     delete
 
 dx::log::info 'Do you really want to run this command? It can delete some Docker resources. Be careful. [y/n]'
 read -e -r confirmation

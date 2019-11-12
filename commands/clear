@@ -7,19 +7,6 @@ source "${DXC_HOME}/shared/all.sh"
 # shellcheck source=commands/core/clear.sh
 source "${DXC_HOME}/core/clear.sh"
 
-#?? Remove resources using a filter
-##?
-##?
-##? Usage:
-##?     clear <resource_filter>
-##?
-##? Examples:
-##?     clear containers
-##?     clear images
-##?     clear volumes
-##?     clear networks
-##?     clear all
-##?     clear dirt
 
 readonly resource_filter="${1:-}"
 
