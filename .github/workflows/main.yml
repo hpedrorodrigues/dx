@@ -1,4 +1,4 @@
-name: DX Checks
+name: Checks
 on:
   pull_request:
     branches:

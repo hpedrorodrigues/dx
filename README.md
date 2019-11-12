@@ -100,7 +100,7 @@ fpath=("${HOME}/.dx/completion" $fpath)
 > You may have to force rebuild the zcompdump with `rm -f ~/.zcompdump && compinit`.
 
 
-[github-action-badge]: https://github.com/hpedrorodrigues/dx/workflows/DX%20Checks/badge.svg
+[github-action-badge]: https://github.com/hpedrorodrigues/dx/workflows/Checks/badge.svg
 [github-action-dx]: https://github.com/hpedrorodrigues/dx/actions
 
 [written-in-badge]: https://img.shields.io/badge/Written%20in-bash-ff69b4.svg
