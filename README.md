@@ -50,7 +50,7 @@ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.bashrc"
 ## or
 
 # Zsh
-echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshenv"
+echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshrc"
 ```
 
 > **Note**: To use the interactive menu with fuzzy searching you need to install
@@ -62,7 +62,7 @@ echo 'export PATH="${HOME}/.dx:${PATH}"' >> "${HOME}/.zshenv"
 
 **dx** provides shell completion to complete supported commands while typing.
 
-If you want to add the Bash completion, add the following to your `.bashrc` or `.zshenv`.
+If you want to add the Bash completion, add the following to your `.bashrc` or `.zshrc`.
 
 ```bash
 [ -f "${HOME}/.dx/completion/dx.bash" ] && source "${HOME}/.dx/completion/dx.bash"
