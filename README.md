@@ -41,6 +41,8 @@ Usage:
 
 ## Installation
 
+**dx** requires bash 5.0+.
+
 ### Using Homebrew or Linuxbrew
 
 You can use [Homebrew][homebrew] or [Linuxbrew][linuxbrew] to install **dx**.
