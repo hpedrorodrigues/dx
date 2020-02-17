@@ -27,7 +27,7 @@ if [ -z "${BASH_VERSION:-}" ]; then
   exit 1
 fi
 
-if [ -z "${BASH_VERSINFO}" -o "${BASH_VERSINFO}" -lt "${MIN_REQUIRED_BASH_VERSION}" ]; then
+if [ -z "${BASH_VERSINFO:-}" -o "${BASH_VERSINFO:-}" -lt "${MIN_REQUIRED_BASH_VERSION}" ]; then
   echo '!!! Sorry, you need at least bash-5.0 to run dx' >&2
   exit 1
 fi
