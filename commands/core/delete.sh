@@ -41,6 +41,11 @@ function dx::delete() {
 
     local -r row="$(echo -e "${resources}" | fzf)"
 
+    if [ -z "${row}" ]; then
+      # User does not select any option
+      exit 0
+    fi
+
     local -r type="$(echo "${row}" | awk '{ print $1 }')"
     local -r id="$(echo "${row}" | awk '{ print $2 }')"
     local -r description="$(echo "${row}" | awk '{ print $3 }')"
