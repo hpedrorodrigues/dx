@@ -18,6 +18,20 @@
 
 set -euo pipefail
 
+## Bash version check
+
+readonly MIN_REQUIRED_BASH_VERSION='5'
+
+if [ -z "${BASH_VERSION:-}" ]; then
+  echo '!!! Bash is required to run dx' >&2
+  exit 1
+fi
+
+if [ -z "${BASH_VERSINFO}" -o "${BASH_VERSINFO}" -lt "${MIN_REQUIRED_BASH_VERSION}" ]; then
+  echo '!!! Sorry, you need at least bash-5.0 to run dx' >&2
+  exit 1
+fi
+
 ## Environment variables
 
 DX_SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
