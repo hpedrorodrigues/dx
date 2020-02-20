@@ -3,15 +3,15 @@
 
 # dx
 
-**dx** is a command-line tool to help you manage Docker resources faster with
-interactive commands.
+**dx** is a command-line tool to help you manage local Docker resources faster
+with interactive commands.
 
 ## Usage
 
 ```
 dx
 
-Command-line tool to help you manage Docker resources faster
+Command-line tool to help you manage local Docker resources faster
 ---
 Usage:
   dx ls                         : List all resources

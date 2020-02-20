@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# dx(1) is a command-line tool to help manage Docker resources
+# dx(1) is a command-line tool to help you manage local Docker resources faster
 
 # Copyright 2019 Pedro Rodrigues
 #
@@ -49,7 +49,7 @@ function dx::print_help() {
   cat <<EOF
 dx
 
-Command-line tool to help you manage Docker resources faster
+Command-line tool to help you manage local Docker resources faster
 ---
 Usage:
   dx ls                         : List all resources

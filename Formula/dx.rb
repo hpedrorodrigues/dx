@@ -2,7 +2,7 @@
 # - https://docs.brew.sh/Formula-Cookbook
 # - https://rubydoc.brew.sh/Formula
 class Dx < Formula
-  desc "Command-line tool to help you manage Docker resources faster"
+  desc "Command-line tool to help you manage local Docker resources faster"
   homepage "https://github.com/hpedrorodrigues/dx"
   url "https://github.com/hpedrorodrigues/dx/archive/v0.1.3.tar.gz"
   sha256 "8803665890e803587b0cd1f6a60ff3e9dd584c1ffecb540e06e3b300eb25a1a0"
