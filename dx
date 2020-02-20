@@ -103,7 +103,7 @@ function dx::find_command() {
 function dx::check_arguments() {
   local -r n_args="${#}"
 
-  if [ ${n_args} -lt 1 ] || [[ "${*}" == *'--help'* ]]; then
+  if [ ${n_args} -lt 1 ] || [[ ${*} == *'--help'* ]]; then
     dx::print_help
     exit 0
   fi
