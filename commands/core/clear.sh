@@ -16,7 +16,7 @@ function dx::remove_containers() {
 function dx::remove_images() {
   dx::docker::check_requirements
 
-  docker images prune --all
+  docker image prune --all --force
 }
 
 function dx::remove_volumes() {
