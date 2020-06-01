@@ -4,12 +4,12 @@ set -euo pipefail
 
 # shellcheck source=commands/shared/all.sh
 source "${DXC_HOME}/shared/all.sh"
-# shellcheck source=commands/core/clear.sh
-source "${DXC_HOME}/core/clear.sh"
+# shellcheck source=commands/core/prune.sh
+source "${DXC_HOME}/core/prune.sh"
 
 readonly resource_filter="${1:-}"
 
-dx::assert::non_empty "${resource_filter}" 'The clear command requires a resource filter.'
+dx::assert::non_empty "${resource_filter}" 'The prune command requires a resource filter.'
 
 dx::log::info 'Do you really want to delete the Docker resources with this filter? Be careful. [y/n]'
 read -e -r confirmation

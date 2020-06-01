@@ -19,7 +19,7 @@ Usage:
   dx logs                       : Show the logs of a container
   dx inspect                    : Return low-level information on objects
   dx delete                     : Remove one or more resources     [confirmation required]
-  dx clear <resource_filter>    : Remove resources using a filter  [confirmation required]
+  dx prune <resource_filter>    : Remove resources using a filter  [confirmation required]
      |> containers                - Remove ALL containers
      |> images                    - Remove images not used by any containers
      |> volumes                   - Remove volumes not referenced by any containers

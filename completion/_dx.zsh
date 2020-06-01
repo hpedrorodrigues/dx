@@ -3,12 +3,12 @@
 _dx() {
   local subcommand="${words[2]}"
 
-  if [ "${subcommand}" = 'clear' ]; then
+  if [ "${subcommand}" = 'prune' ]; then
     _arguments \
       "2: :(containers images volumes networks dirt all)"
   else
     _arguments \
-      "(- *): :(ls exec logs inspect delete clear)"
+      "(- *): :(ls exec logs inspect delete prune)"
   fi
 }
 
