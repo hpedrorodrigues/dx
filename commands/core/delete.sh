@@ -5,10 +5,14 @@ function dx::delete_resource() {
   local -r resource_id="${2}"
   local -r description="${3}"
 
-  dx::log::info "Do you really want to delete the ${resource_type} [${description} - ${resource_id}]? Be careful. [y/n]"
-  read -e -r confirmation
+  if ${DX_CONFIRMATION_REQUIRED:-true}; then
+    dx::log::info "Do you really want to delete the ${resource_type} [${description} - ${resource_id}]? Be careful. [y/n]"
+    read -e -r confirmation
+  fi
 
-  if [ "${confirmation}" = 'y' ] || [ "${confirmation}" = 'yes' ]; then
+  if ! "${DX_CONFIRMATION_REQUIRED:-true}" \
+    || [ "${confirmation:-'n'}" = 'y' ] \
+    || [ "${confirmation:-'n'}" = 'yes' ]; then
     case "${resource_type}" in
       'container')
         docker rm --force "${resource_id}"
