@@ -4,10 +4,10 @@ function dx::list() {
   dx::docker::check_requirements
 
   dx::log::info 'Running Containers\n'
-  docker ps
+  docker container ls
 
   dx::log::info '\nStopped Containers\n'
-  docker ps -f 'status=exited'
+  docker container ls --filter 'status=exited'
 
   dx::log::info '\nImages\n'
   docker images

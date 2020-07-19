@@ -7,7 +7,7 @@ function dx::docker::check_requirements() {
 }
 
 function dx::list_resources() {
-  docker ps \
+  docker container ls \
     --all \
     --format 'container {{.ID}} {{.Names}}'
 
@@ -25,7 +25,7 @@ function dx::list_resources() {
 function dx::docker::containers() {
   local -r template='table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'
 
-  docker ps --format="${template}" "${@}" | tail -n +2
+  docker container ls --format="${template}" "${@}" | tail -n +2
 }
 
 function dx::docker::running_containers() {
@@ -52,4 +52,10 @@ function dx::docker::inspect() {
   local -r resource_id="${1}"
 
   docker inspect "${resource_id}"
+}
+
+function dx::docker::pid() {
+  local -r container_id="${1}"
+
+  docker inspect --format '{{.State.Pid}}' "${container_id}"
 }

@@ -3,7 +3,7 @@
 function dx::remove_all_containers() {
   dx::docker::check_requirements
 
-  docker ps --no-trunc --quiet --all \
+  docker container ls --no-trunc --quiet --all \
     | xargs -I % docker rm --volumes --force %
 }
 
