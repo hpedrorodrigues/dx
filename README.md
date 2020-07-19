@@ -17,6 +17,7 @@ Usage:
   dx ls                         : List all resources
   dx exec                       : Execute custom commands in a running container
   dx logs                       : Show the logs of a container
+  dx pid                        : Return the process id of a container
   dx inspect                    : Return low-level information on objects
   dx delete                     : Remove one or more resources     [confirmation required]
   dx prune <resource_filter>    : Remove resources using a filter  [confirmation required]

@@ -8,7 +8,7 @@ _dx() {
       "2: :(containers images volumes networks dirt all)"
   else
     _arguments \
-      "(- *): :(ls exec logs inspect delete prune)"
+      "(- *): :(ls exec logs inspect delete prune pid)"
   fi
 }
 
