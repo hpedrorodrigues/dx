@@ -49,8 +49,7 @@ Usage:
 You can use [Homebrew][homebrew] or [Linuxbrew][linuxbrew] to install **dx**.
 
 ```bash
-brew tap hpedrorodrigues/dx https://github.com/hpedrorodrigues/dx.git
-brew install dx
+brew install hpedrorodrigues/tools/dx
 ```
 
 > **Note**: It will also set up the completions (Bash and Zsh).
