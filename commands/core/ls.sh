@@ -7,7 +7,7 @@ function dx::list() {
   docker container ls \
     --filter 'status=running' \
     --filter 'status=restarting' \
-    --filter 'status=removing' \
+    --filter 'status=removing'
 
   dx::log::info '\nStopped Containers\n'
   docker container ls \
