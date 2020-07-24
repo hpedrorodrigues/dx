@@ -4,8 +4,8 @@
 class Dx < Formula
   desc "Command-line tool to help you manage local Docker resources faster"
   homepage "https://github.com/hpedrorodrigues/dx"
-  url "https://github.com/hpedrorodrigues/dx/archive/v0.1.5.tar.gz"
-  sha256 "4535d9dd7569f5bcfde17ee2203ad83c237dd8faf901dce8bbad99cdf2c94be2"
+  url "https://github.com/hpedrorodrigues/dx/archive/v0.1.6.tar.gz"
+  sha256 "92a4113040d478aa377a44547d470ff61f01ad0e4e072419e5b02c964a52479b"
 
   def install
     bin.install "dx"
