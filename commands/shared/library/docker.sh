@@ -29,7 +29,10 @@ function dx::docker::containers() {
 }
 
 function dx::docker::running_containers() {
-  dx::docker::containers
+  dx::docker::containers \
+    --filter 'status=running' \
+    --filter 'status=restarting' \
+    --filter 'status=removing'
 }
 
 function dx::docker::all_containers() {
