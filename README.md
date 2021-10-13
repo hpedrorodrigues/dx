@@ -1,6 +1,8 @@
 [![][github-action-badge]][github-action-dx]
 [![][written-in-badge]][shell-code-dx]
 
+**[DEPRECATED] This project has been merged to [Sphynx](https://github.com/hpedrorodrigues/sphynx) and has been deprecated.**
+
 # dx
 
 **dx** is a command-line tool to help you manage local Docker resources faster
